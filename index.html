@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Assessment for Kids</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Comic Neue', cursive;
+            text-align: center;
+            background-color: #FCE4EC;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #FF6F61;
+            font-size: 3em;
+            text-shadow: 2px 2px #FFABAB;
+            margin-bottom: 50px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .assessment-button {
+            width: 45%;
+            height: 150px;
+            padding: 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            background-color: #FFCC80;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .assessment-button:hover {
+            background-color: #FFAB91;
+            transform: translateY(-5px);
+            box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Background elements */
+        .cloud {
+            position: absolute;
+            background-color: #FFF9C4;
+            border-radius: 50%;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cloud1 {
+            width: 150px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+        }
+
+        .cloud2 {
+            width: 200px;
+            height: 100px;
+            top: 20%;
+            right: 15%;
+        }
+
+        .rainbow {
+            width: 300px;
+            height: 150px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to bottom, #FF6F61, #FFAB91, #FFCC80, #FFF9C4);
+            border-radius: 50% 50% 0 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+
+    <h1>Mental Health Assessment for Kids</h1>
+
+    <div class="button-container">
+        <button class="assessment-button" id="formAssessmentBtn">แบบประเมินแบบฟอร์ม</button>
+        <button class="assessment-button" id="imageAssessmentBtn">แบบประเมินผ่านรูปภาพ</button>
+    </div>
+
+    <div class="rainbow"></div>
+
+    <script>
+        // Redirect to Form Assessment
+        document.getElementById('formAssessmentBtn').addEventListener('click', function() {
+            window.location.href = "form-assessment.html";
+        });
+
+        // Redirect to Image Assessment
+        document.getElementById('imageAssessmentBtn').addEventListener('click', function() {
+            window.location.href = "image-assessment.html";
+        });
+    </script>
+
+</body>
+</html>

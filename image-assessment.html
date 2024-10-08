@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Image Assessment</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: rgb(250, 207, 140);
+            background: linear-gradient(90deg, rgba(255, 198, 255, 1) 15%, rgba(255, 246, 140, 1) 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container-img {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #FF6F61;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .mood-selection {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 25px;
+        }
+
+        .emotion-image {
+            width: 120px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease;
+        }
+
+        .emotion-image:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        .chat-box {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .chat-input {
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 8px;
+            width: 75%;
+            border: 2px solid lightgray;
+            margin-bottom: 10px;
+        }
+
+        .chat-btn {
+            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            background-color: #FF6F61;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .chat-btn:hover {
+            background-color: #FF8C85;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            font-size: 20px;
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%;
+            border-radius: 10px;
+            text-align: center;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .modal-content.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .previous-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .previous-btn h1 {
+            font-size: 60px;
+            margin: 0;
+            background-color: white;
+            border-radius: 50%;
+            padding: 15px;
+            width: 80px;
+            height: 80px;
+            color: #FF6F61;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .previous-btn a {
+            text-decoration: none;
+        }
+
+        .previous-btn h1:hover {
+            color: #FF8C85;
+        }
+
+        .t-h3 {
+            font-size: 1.5em;
+            color: #FF6F61;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="previous-btn">
+        <a href="index.html">
+            <h1>&lt;</h1>
+        </a>
+    </div>
+
+    <div class="container-img">
+        <h1>Mental Health Image Assessment</h1>
+
+        <div class="mood-selection">
+            <img src="gif/happy.gif" class="emotion-image" id="happyImage" alt="Happy">
+            <img src="gif/neutral.gif" class="emotion-image" id="neutralImage" alt="Neutral">
+            <img src="gif/sad.gif" class="emotion-image" id="sadImage" alt="Sad">
+        </div><br>
+
+        <div class="chat-box" id="chatBox">
+            <hr><br>
+            <h3 class="t-h3">Tell us more about your day:</h3>
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type here...">
+            <button class="chat-btn" id="chatBtn">Send</button>
+        </div>
+
+        <div id="alertModal" class="modal">
+            <div class="modal-content" id="modalContent">
+                <span class="close" id="closeModal">&times;</span>
+                <p id="modalMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scriptImage.js"></script>
+</body>
+
+</html>
